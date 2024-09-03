@@ -11,6 +11,9 @@ struct HomeUIView: View {
     @ObservedObject var viewModel: HomeViewModel
     @State private var progress: Double = 0.0
     @State private var isSheetPresented = false
+    @State private var isEditSheetPresented = false
+
+    
     var body: some View {
         ZStack {
             VStack {
@@ -31,7 +34,7 @@ struct HomeUIView: View {
                             
                             Spacer()
                             Button {
-                                
+                                isEditSheetPresented = true
                             } label: {
                                 Image(systemName: "square.and.pencil")
                                     .foregroundColor(.black.opacity(0.4))
@@ -91,8 +94,9 @@ struct HomeUIView: View {
                                 Text("\(viewModel.progress.income)")
                                     .font(.system(size: 28, weight: .bold))
                                     .foregroundColor(.mainGreen)
+                                    .frame(width: 129)
                             }
-                            .padding().padding(.horizontal,27)
+                            .padding()
                             .overlay(
                                 RoundedRectangle(cornerRadius: 16)
                                     .stroke(Color.mainGreen, lineWidth: 1)
@@ -155,6 +159,12 @@ struct HomeUIView: View {
                 .sheet(isPresented: $isSheetPresented) {
                     AddClientSheetView(viewModel: viewModel, isPresented: $isSheetPresented)
                 }
+            
+                .sheet(isPresented: $isEditSheetPresented) {
+                    EditProgressUIView(viewModel: viewModel, isPresented: $isEditSheetPresented, progress: viewModel.progress)
+                }
+            
+            
 //            if isSheetPresented {
 //                ZStack {
 //                    AddClientSheetView(viewModel: viewModel, isPresented: $isSheetPresented)
