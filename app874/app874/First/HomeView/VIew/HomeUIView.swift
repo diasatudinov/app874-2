@@ -152,14 +152,17 @@ struct HomeUIView: View {
                 Spacer()
                 
             }.padding(.horizontal).disabled(isSheetPresented)
-            if isSheetPresented {
-                ZStack {
+                .sheet(isPresented: $isSheetPresented) {
                     AddClientSheetView(viewModel: viewModel, isPresented: $isSheetPresented)
-                        
-                        
-                    
-                }.transition(.move(edge: .bottom)).animation(.easeInOut)
-            }
+                }
+//            if isSheetPresented {
+//                ZStack {
+//                    AddClientSheetView(viewModel: viewModel, isPresented: $isSheetPresented)
+//                        
+//                        
+//                    
+//                }.transition(.move(edge: .bottom)).animation(.easeInOut)
+//            }
         }
         
     }
@@ -172,152 +175,4 @@ struct HomeUIView: View {
 
 #Preview {
     HomeUIView(viewModel: HomeViewModel())
-}
-
-
-struct AddClientSheetView: View {
-    @ObservedObject var viewModel: HomeViewModel
-    @State private var isShowingImagePicker = false
-    @State private var selectedImage: UIImage?
-    @Binding var isPresented: Bool
-    
-    @State private var name = ""
-    @State private var proceduresPerformed = ""
-    @State private var proceduresTotal = ""
-    @State private var income = ""
-    var body: some View {
-        ZStack {
-            VStack {
-                Spacer()
-                
-                VStack {
-                    
-                    Rectangle()
-                        .frame(width: 36, height: 5)
-                        .cornerRadius(2)
-                        .opacity(0.5)
-                        .padding(.vertical, 5)
-                    
-                    HStack {
-                        Spacer()
-                        
-                        Button {
-                            isPresented = false
-                        } label: {
-                            ZStack {
-                                Circle()
-                                    .frame(width: 30, height: 30)
-                                    .cornerRadius(12)
-                                    .foregroundColor(.gray.opacity(0.3))
-                                Image(systemName: "xmark")
-                                    .foregroundColor(.black.opacity(0.5))
-                                    .font(.system(size: 14, weight: .semibold))
-                            }
-                        }
-                    }
-                    
-                    HStack {
-                        Text("Add client")
-                            .font(.system(size: 20, weight: .semibold))
-                        Spacer()
-                    }
-                    
-                    if let image = selectedImage {
-                        Image(uiImage: image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 99)
-                            .clipShape(Circle())
-                        
-                    } else {
-                        Circle()
-                            .foregroundColor(.gray.opacity(0.3))
-                            .frame(width: 99, height: 99)
-                    }
-                    Text("Pick a picture")
-                        .foregroundColor(.red)
-                        .onTapGesture {
-                            isShowingImagePicker = true
-                        }
-                    
-                    HStack(spacing: 10) {
-                        Text("Name")
-                        TextField("Dianne Russell", text: $name)
-                    }.padding()
-                        .background(Color.white).cornerRadius(10)
-                    
-                    HStack(spacing: 10) {
-                        Text("Procedures performed")
-                            .frame(width: 175)
-                        TextField("5", text: $proceduresPerformed)
-                            .keyboardType(.numberPad)
-                    }.padding()
-                        .background(Color.white).cornerRadius(10)
-                    
-                    HStack(spacing: 10) {
-                        Text("Total procedures")
-                        TextField("12", text: $proceduresTotal)
-                            .keyboardType(.numberPad)
-                    }.padding()
-                        .background(Color.white).cornerRadius(10)
-                    
-                    HStack(spacing: 10) {
-                        Text("Income")
-                        TextField("$500,00", text: $income)
-                    }.padding()
-                        .background(Color.white).cornerRadius(10)
-                    Spacer()
-                    Button {
-                        if !name.isEmpty && !proceduresPerformed.isEmpty && !proceduresTotal.isEmpty && !income.isEmpty {
-                            if let image = selectedImage {
-                                let client = Client(imageData: image.jpegData(compressionQuality: 1.0) ,name: name, proceduresPerformed: Int(proceduresPerformed) ?? 0, totalProcedures: Int(proceduresTotal) ?? 0, income: income)
-                                viewModel.addClient(for: client)
-                            } else {
-                                let client = Client(name: name, proceduresPerformed: Int(proceduresPerformed) ?? 0, totalProcedures: Int(proceduresTotal) ?? 0, income: income)
-                                viewModel.addClient(for: client)
-                            }
-                            isPresented = false
-                            name=""
-                            proceduresPerformed=""
-                            proceduresTotal=""
-                            income=""
-                        }
-                    } label: {
-                        HStack {
-                            Image(systemName: "checkmark.square.fill")
-                            Text("Add")
-                        }.foregroundColor(Color.white)
-                            .font(.system(size: 17))
-                            .frame(maxWidth: .infinity)
-                    }.frame(height: 88).background(Color.red)
-                        .cornerRadius(12).padding(.horizontal, -16)
-                        
-                    
-                }.padding(.horizontal)
-                .frame(maxWidth: .infinity)
-                .background(Color.sheet)
-                .frame(height: isPresented ? UIScreen.main.bounds.height / 1.5 : 0)
-                .cornerRadius(20)
-                .sheet(isPresented: $isShowingImagePicker, onDismiss: loadImage) {
-                    ImagePicker(selectedImage: $selectedImage, isPresented: $isShowingImagePicker)
-                }
-                
-                
-                    
-                
-                
-            }.edgesIgnoringSafeArea(.bottom)
-            
-            
-            
-            
-            
-            
-        }
-    }
-    func loadImage() {
-        if let selectedImage = selectedImage {
-            print("Selected image size: \(selectedImage.size)")
-        }
-    }
 }

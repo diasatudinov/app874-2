@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B8BBC942C874D82008139DF /* AddClientSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBC932C874D82008139DF /* AddClientSheetView.swift */; };
 		2BF2806E2C86EED800336415 /* app874App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2806D2C86EED800336415 /* app874App.swift */; };
 		2BF280702C86EED800336415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2806F2C86EED800336415 /* ContentView.swift */; };
 		2BF280722C86EEDA00336415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF280712C86EEDA00336415 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B8BBC932C874D82008139DF /* AddClientSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientSheetView.swift; sourceTree = "<group>"; };
 		2BF2806A2C86EED800336415 /* app874.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app874.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF2806D2C86EED800336415 /* app874App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app874App.swift; sourceTree = "<group>"; };
 		2BF2806F2C86EED800336415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				2BF2808C2C87006200336415 /* HomeUIView.swift */,
 				2BF280942C871D5E00336415 /* ClientCellUIView.swift */,
+				2B8BBC932C874D82008139DF /* AddClientSheetView.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				2BF280702C86EED800336415 /* ContentView.swift in Sources */,
 				2BF280872C86F23700336415 /* LoaderUIView.swift in Sources */,
 				2BF2806E2C86EED800336415 /* app874App.swift in Sources */,
+				2B8BBC942C874D82008139DF /* AddClientSheetView.swift in Sources */,
 				2BF280952C871D5F00336415 /* ClientCellUIView.swift in Sources */,
 				2BF280912C87111800336415 /* HomeViewModel.swift in Sources */,
 				2BF2808F2C870F8D00336415 /* Progress.swift in Sources */,

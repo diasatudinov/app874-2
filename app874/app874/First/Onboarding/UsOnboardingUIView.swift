@@ -20,7 +20,7 @@ struct UsOnboardingUIView: View {
     var body: some View {
         if !onboardingShowed {
             if pageNum < 3 {
-                ZStack {
+                ZStack {   
                     Color.onboardingBg
                         .ignoresSafeArea()
                     
