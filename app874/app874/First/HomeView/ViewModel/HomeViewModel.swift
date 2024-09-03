@@ -28,6 +28,15 @@ class HomeViewModel: ObservableObject {
         loadProgress()
     }
     
+    func updateClient(for client: Client) {
+        print("1")
+        
+        if let index = clients.firstIndex(where: { $0.id == client.id }) {
+            print("2")
+            clients[index] = client
+            
+        }
+    }
     
     func updateProgress(for progress: Progress) {
         self.progress = progress

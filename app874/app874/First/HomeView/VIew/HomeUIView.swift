@@ -12,7 +12,9 @@ struct HomeUIView: View {
     @State private var progress: Double = 0.0
     @State private var isSheetPresented = false
     @State private var isEditSheetPresented = false
+    @State private var isEditClientSheetPresented = false
 
+    
     
     var body: some View {
         ZStack {
@@ -146,8 +148,9 @@ struct HomeUIView: View {
                     }
                 } else {
                     ScrollView {
-                        ForEach(viewModel.clients, id: \.self) { client in
-                            ClientCellUIView(viewModel: viewModel, client: client)
+                        ForEach($viewModel.clients, id: \.self) { $client in
+                            ClientCellUIView(viewModel: viewModel, client: $client, isEditClientSheetPresented: $isEditClientSheetPresented)
+                                
                             
                         }
                     }
@@ -164,6 +167,8 @@ struct HomeUIView: View {
                     EditProgressUIView(viewModel: viewModel, isPresented: $isEditSheetPresented, progress: viewModel.progress)
                 }
             
+                
+                
             
 //            if isSheetPresented {
 //                ZStack {

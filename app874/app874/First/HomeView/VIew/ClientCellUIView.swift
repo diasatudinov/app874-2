@@ -9,9 +9,11 @@ import SwiftUI
 
 struct ClientCellUIView: View {
     @ObservedObject var viewModel: HomeViewModel
-    @State var client: Client
+    @Binding var client: Client
     @State private var progress: Double = 0.0
-
+    @State private var isEditSheetPresented = false
+    @Binding var isEditClientSheetPresented: Bool
+    
     var body: some View {
         ZStack {
             Color.mainGreen.opacity(0.1)
@@ -39,7 +41,7 @@ struct ClientCellUIView: View {
                         }
                         HStack {
                             Button {
-                                
+                                isEditClientSheetPresented = true
                             } label: {
                                 Text("Edit")
                                     .font(.system(size: 12))
@@ -121,8 +123,12 @@ struct ClientCellUIView: View {
                         .font(.system(size: 17, weight: .semibold))
                 }
             }.padding(.horizontal)
+                .sheet(isPresented: $isEditClientSheetPresented) {
+                    EditClientSheetView(viewModel: viewModel, isPresented: $isEditClientSheetPresented, client: $client)
+                }
             
         }.frame(height: 203).cornerRadius(12)
+            
     }
     
     func progressCounter() {
@@ -132,5 +138,5 @@ struct ClientCellUIView: View {
 }
 
 #Preview {
-    ClientCellUIView(viewModel: HomeViewModel(), client: Client(name: "Dianne Russell", proceduresPerformed: 5, totalProcedures: 12, income: "$500"))
+    ClientCellUIView(viewModel: HomeViewModel(), client: .constant(Client(name: "Dianne Russell", proceduresPerformed: 5, totalProcedures: 12, income: "$500")), isEditClientSheetPresented: .constant(false))
 }
