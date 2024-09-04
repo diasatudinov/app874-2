@@ -165,6 +165,8 @@ struct HomeUIView: View {
                 .sheet(isPresented: $isEditSheetPresented) {
                     EditProgressUIView(viewModel: viewModel, isPresented: $isEditSheetPresented, progress: viewModel.progress)
                 }
+                
+            
             
                 
                 
