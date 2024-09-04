@@ -15,6 +15,13 @@
 		2B8BBCA12C8863BB008139DF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCA02C8863BB008139DF /* Service.swift */; };
 		2B8BBCA32C8869D9008139DF /* AddServiceUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCA22C8869D9008139DF /* AddServiceUIView.swift */; };
 		2B8BBCA52C88732D008139DF /* ServiceCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCA42C88732D008139DF /* ServiceCellUIView.swift */; };
+		2B8BBCAC2C88A07B008139DF /* ProceduresUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCAB2C88A07B008139DF /* ProceduresUIView.swift */; };
+		2B8BBCAE2C88A14D008139DF /* ProceduresCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCAD2C88A14D008139DF /* ProceduresCellUIView.swift */; };
+		2B8BBCB02C88A1DF008139DF /* Procedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCAF2C88A1DF008139DF /* Procedure.swift */; };
+		2B8BBCB22C88A3C8008139DF /* AddProcedureUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCB12C88A3C8008139DF /* AddProcedureUIView.swift */; };
+		2B8BBCB42C88A405008139DF /* ProcedureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCB32C88A405008139DF /* ProcedureViewModel.swift */; };
+		2B8BBCBA2C88B28E008139DF /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCB92C88B28E008139DF /* SettingsUIView.swift */; };
+		2B8BBCBC2C88B2A2008139DF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCBB2C88B2A2008139DF /* SettingsViewModel.swift */; };
 		2BF2806E2C86EED800336415 /* app874App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2806D2C86EED800336415 /* app874App.swift */; };
 		2BF280702C86EED800336415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2806F2C86EED800336415 /* ContentView.swift */; };
 		2BF280722C86EEDA00336415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF280712C86EEDA00336415 /* Assets.xcassets */; };
@@ -39,6 +46,13 @@
 		2B8BBCA02C8863BB008139DF /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2B8BBCA22C8869D9008139DF /* AddServiceUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddServiceUIView.swift; sourceTree = "<group>"; };
 		2B8BBCA42C88732D008139DF /* ServiceCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCellUIView.swift; sourceTree = "<group>"; };
+		2B8BBCAB2C88A07B008139DF /* ProceduresUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProceduresUIView.swift; sourceTree = "<group>"; };
+		2B8BBCAD2C88A14D008139DF /* ProceduresCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProceduresCellUIView.swift; sourceTree = "<group>"; };
+		2B8BBCAF2C88A1DF008139DF /* Procedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Procedure.swift; sourceTree = "<group>"; };
+		2B8BBCB12C88A3C8008139DF /* AddProcedureUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProcedureUIView.swift; sourceTree = "<group>"; };
+		2B8BBCB32C88A405008139DF /* ProcedureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureViewModel.swift; sourceTree = "<group>"; };
+		2B8BBCB92C88B28E008139DF /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
+		2B8BBCBB2C88B2A2008139DF /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		2BF2806A2C86EED800336415 /* app874.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app874.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF2806D2C86EED800336415 /* app874App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app874App.swift; sourceTree = "<group>"; };
 		2BF2806F2C86EED800336415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +110,75 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
+		2B8BBCA72C889D09008139DF /* Procedures */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BBCAA2C889D2B008139DF /* Model */,
+				2B8BBCA92C889D25008139DF /* View */,
+				2B8BBCA82C889D1F008139DF /* ViewModel */,
+			);
+			path = Procedures;
+			sourceTree = "<group>";
+		};
+		2B8BBCA82C889D1F008139DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BBCB32C88A405008139DF /* ProcedureViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2B8BBCA92C889D25008139DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BBCAB2C88A07B008139DF /* ProceduresUIView.swift */,
+				2B8BBCAD2C88A14D008139DF /* ProceduresCellUIView.swift */,
+				2B8BBCB12C88A3C8008139DF /* AddProcedureUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B8BBCAA2C889D2B008139DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BBCAF2C88A1DF008139DF /* Procedure.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B8BBCB52C88B247008139DF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BBCB82C88B258008139DF /* Model */,
+				2B8BBCB72C88B253008139DF /* View */,
+				2B8BBCB62C88B24D008139DF /* ViewModel */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2B8BBCB62C88B24D008139DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BBCBB2C88B2A2008139DF /* SettingsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2B8BBCB72C88B253008139DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BBCB92C88B28E008139DF /* SettingsUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B8BBCB82C88B258008139DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2BF280612C86EED800336415 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +229,8 @@
 		2BF2807C2C86F07D00336415 /* First */ = {
 			isa = PBXGroup;
 			children = (
+				2B8BBCB52C88B247008139DF /* Settings */,
+				2B8BBCA72C889D09008139DF /* Procedures */,
 				2B8BBC992C88546E008139DF /* TabView */,
 				2BF280882C87004600336415 /* HomeView */,
 				2BF2807E2C86F08E00336415 /* Onboarding */,
@@ -294,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8BBCB42C88A405008139DF /* ProcedureViewModel.swift in Sources */,
 				2B8BBCA52C88732D008139DF /* ServiceCellUIView.swift in Sources */,
 				2B8BBCA32C8869D9008139DF /* AddServiceUIView.swift in Sources */,
 				2BF280702C86EED800336415 /* ContentView.swift in Sources */,
@@ -301,14 +387,20 @@
 				2B8BBC9F2C88589E008139DF /* ClientDetailsUIView.swift in Sources */,
 				2B8BBC9C2C885486008139DF /* TabUIView.swift in Sources */,
 				2BF2806E2C86EED800336415 /* app874App.swift in Sources */,
+				2B8BBCB02C88A1DF008139DF /* Procedure.swift in Sources */,
 				2B8BBC942C874D82008139DF /* AddClientSheetView.swift in Sources */,
 				2BF280952C871D5F00336415 /* ClientCellUIView.swift in Sources */,
 				2B8BBC982C87533B008139DF /* EditClientSheetView.swift in Sources */,
+				2B8BBCAE2C88A14D008139DF /* ProceduresCellUIView.swift in Sources */,
+				2B8BBCAC2C88A07B008139DF /* ProceduresUIView.swift in Sources */,
 				2BF280912C87111800336415 /* HomeViewModel.swift in Sources */,
 				2BF2808F2C870F8D00336415 /* Progress.swift in Sources */,
+				2B8BBCB22C88A3C8008139DF /* AddProcedureUIView.swift in Sources */,
 				2BF280822C86F0CB00336415 /* ReOnboardingUIView.swift in Sources */,
 				2B8BBCA12C8863BB008139DF /* Service.swift in Sources */,
 				2BF280982C872A1700336415 /* ImagePicker.swift in Sources */,
+				2B8BBCBA2C88B28E008139DF /* SettingsUIView.swift in Sources */,
+				2B8BBCBC2C88B2A2008139DF /* SettingsViewModel.swift in Sources */,
 				2B8BBC962C874E20008139DF /* EditProgressUIView.swift in Sources */,
 				2BF280842C86F0D500336415 /* UsOnboardingUIView.swift in Sources */,
 				2BF2808D2C87006200336415 /* HomeUIView.swift in Sources */,

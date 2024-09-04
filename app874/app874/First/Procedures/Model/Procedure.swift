@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Procedure: Identifiable, Hashable, Codable {
+    var id = UUID()
+    var name: String
+    var price: String
+    var time: String
+    var notes: String
+    
+}
