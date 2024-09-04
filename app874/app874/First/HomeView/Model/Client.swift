@@ -14,9 +14,14 @@ struct Client: Identifiable, Hashable, Codable {
     var proceduresPerformed: Int
     var totalProcedures: Int
     var income: String
+    var email: String
+    var number: String
+    var note: String
+    var services: [Service] = []
+    var story: [Service] = []
     
     enum CodingKeys: String, CodingKey {
-        case id, imageData, name, proceduresPerformed, totalProcedures, income
+        case id, imageData, name, proceduresPerformed, totalProcedures, income, email , number, note, services, story
     }
     
     var image: UIImage? {

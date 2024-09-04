@@ -11,7 +11,9 @@ import SwiftUI
 struct app874App: App {
     var body: some Scene {
         WindowGroup {
-            HomeUIView(viewModel: HomeViewModel())
+            NavigationView {
+                LoaderUIView()
+            }
         }
     }
 }
