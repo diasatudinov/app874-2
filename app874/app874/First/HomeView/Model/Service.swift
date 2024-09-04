@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct Service: Identifiable, Hashable, Codable {
+    var id = UUID()
+    var name: String
+    var price: String
+    var date: Date
+    var notes: String
+    
+    var isExpired: Bool {
+        date < Date()
+    }
+   
+   
+}

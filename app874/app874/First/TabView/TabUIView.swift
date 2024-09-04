@@ -8,8 +8,83 @@
 import SwiftUI
 
 struct TabUIView: View {
+    @State var selectedTab = 0
+    private let tabs = ["Home", "Profile", "Settings"]
+    
+    @ObservedObject var homeVM = HomeViewModel()
+//    @ObservedObject var tripsVM = TripsViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            
+            switch selectedTab {
+            case 0:
+                HomeUIView(viewModel: homeVM)
+               // StatisticsUIView(viewModel: profileVM)
+            case 1:
+                Text("default")
+                //TripsUIView(viewModel: tripsVM)
+            case 2:
+                Text("default")
+               // SettingsUIView()
+            default:
+                Text("default")
+            }
+                VStack {
+                    Spacer()
+                    
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.white)
+                            .frame(height: 80)
+                            
+                        HStack(spacing: 80) {
+                            ForEach(0..<tabs.count) { index in
+                                Button(action: {
+                                    selectedTab = index
+                                }) {
+                                    
+                                    ZStack {
+                                        VStack {
+                                            Image(systemName: icon(for: index))
+                                                .font(.system(size: 20, weight: .semibold))
+                                                .padding(.bottom, 2)
+                                            Text(text(for: index))
+                                                .font(.system(size: 10, weight: .semibold))
+                                        }.foregroundColor(selectedTab == index ? Color.mainGreen : Color.gray)
+                                    }
+                                }
+                                
+                            }
+                        }.padding(.bottom, 25)
+                        
+                        Rectangle()
+                            .fill(Color.black.opacity(1))
+                            .frame(height: 0.3)
+                            .padding(.bottom, 80)
+                    }
+                    
+                }.ignoresSafeArea()
+            
+        }
+    }
+    
+    private func icon(for index: Int) -> String {
+        switch index {
+        case 0: return "house"
+        case 1: return "plus.rectangle.on.rectangle"
+        case 2: return "gearshape"
+        default: return ""
+        }
+    }
+    
+    private func text(for index: Int) -> String {
+        switch index {
+        case 0: return "Home"
+        case 1: return "Procedures"
+        case 2: return "Settings"
+        default: return ""
+        }
     }
 }
 
