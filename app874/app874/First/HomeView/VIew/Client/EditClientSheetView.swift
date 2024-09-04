@@ -1,5 +1,5 @@
 //
-//  AddClientSheetView.swift
+//  EditClientSheetView.swift
 //  app874
 //
 //  Created by Dias Atudinov on 03.09.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddClientSheetView: View {
+struct EditClientSheetView: View {
     @ObservedObject var viewModel: HomeViewModel
     @State private var isShowingImagePicker = false
     @State private var selectedImage: UIImage?
@@ -17,6 +17,8 @@ struct AddClientSheetView: View {
     @State private var proceduresPerformed = ""
     @State private var proceduresTotal = ""
     @State private var income = ""
+    
+    @Binding var client: Client
     var body: some View {
         ZStack {
             VStack {
@@ -48,7 +50,7 @@ struct AddClientSheetView: View {
                     }
                     
                     HStack {
-                        Text("Add client")
+                        Text("Edit the information")
                             .font(.system(size: 20, weight: .semibold))
                         Spacer()
                     }
@@ -101,22 +103,19 @@ struct AddClientSheetView: View {
                     Button {
                         if !name.isEmpty && !proceduresPerformed.isEmpty && !proceduresTotal.isEmpty && !income.isEmpty {
                             if let image = selectedImage {
-                                let client = Client(imageData: image.jpegData(compressionQuality: 1.0) ,name: name, proceduresPerformed: Int(proceduresPerformed) ?? 0, totalProcedures: Int(proceduresTotal) ?? 0, income: income)
-                                viewModel.addClient(for: client)
+                                client = Client(imageData: image.jpegData(compressionQuality: 1.0) ,name: name, proceduresPerformed: Int(proceduresPerformed) ?? 0, totalProcedures: Int(proceduresTotal) ?? 0, income: income, email: "", number: "", note: "")
+                                viewModel.updateClient(for: client)
                             } else {
-                                let client = Client(name: name, proceduresPerformed: Int(proceduresPerformed) ?? 0, totalProcedures: Int(proceduresTotal) ?? 0, income: income)
-                                viewModel.addClient(for: client)
+                                client = Client(name: name, proceduresPerformed: Int(proceduresPerformed) ?? 0, totalProcedures: Int(proceduresTotal) ?? 0, income: income, email: "", number: "", note: "")
+                                viewModel.updateClient(for: client)
                             }
                             isPresented = false
-                            name=""
-                            proceduresPerformed=""
-                            proceduresTotal=""
-                            income=""
+                            
                         }
                     } label: {
                         HStack {
                             Image(systemName: "checkmark.square.fill")
-                            Text("Add")
+                            Text("Edit")
                         }.foregroundColor(Color.white)
                             .font(.system(size: 17))
                             .frame(maxWidth: .infinity)
@@ -131,7 +130,20 @@ struct AddClientSheetView: View {
                 .sheet(isPresented: $isShowingImagePicker, onDismiss: loadImage) {
                     ImagePicker(selectedImage: $selectedImage, isPresented: $isShowingImagePicker)
                 }
-                
+                .onAppear {
+                    if let image = client.image {
+                        selectedImage = image
+                        name = client.name
+                        proceduresPerformed = "\(client.proceduresPerformed)"
+                        proceduresTotal = "\(client.totalProcedures)"
+                        income = client.income
+                    } else {
+                        name = client.name
+                        proceduresPerformed = "\(client.proceduresPerformed)"
+                        proceduresTotal = "\(client.totalProcedures)"
+                        income = client.income
+                    }
+                }
                 
                     
                 
@@ -152,6 +164,7 @@ struct AddClientSheetView: View {
     }
 }
 
+
 #Preview {
-    AddClientSheetView(viewModel: HomeViewModel(), isPresented: .constant(true))
+    EditClientSheetView(viewModel: HomeViewModel(), isPresented: .constant(true), client: .constant(Client(name: "DIAS ATUDINOV", proceduresPerformed: 100, totalProcedures: 200, income: "$1200", email: "", number: "", note: "")))
 }

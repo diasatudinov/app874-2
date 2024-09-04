@@ -69,8 +69,8 @@ struct ClientCellUIView: View {
                     
                     Spacer()
                     
-                    Button {
-                        
+                    NavigationLink {
+                        ClientDetailsUIView(viewModel: viewModel, client: $client)
                     } label: {
                         Image(systemName: "arrow.up")
                             .rotationEffect(Angle(degrees: 45.0))
@@ -138,5 +138,5 @@ struct ClientCellUIView: View {
 }
 
 #Preview {
-    ClientCellUIView(viewModel: HomeViewModel(), client: .constant(Client(name: "Dianne Russell", proceduresPerformed: 5, totalProcedures: 12, income: "$500")), isEditClientSheetPresented: .constant(false))
+    ClientCellUIView(viewModel: HomeViewModel(), client: .constant(Client(name: "Dianne Russell", proceduresPerformed: 5, totalProcedures: 12, income: "$500", email: "", number: "", note: "")), isEditClientSheetPresented: .constant(false))
 }

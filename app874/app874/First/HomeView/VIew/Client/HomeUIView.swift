@@ -150,13 +150,12 @@ struct HomeUIView: View {
                     ScrollView {
                         ForEach($viewModel.clients, id: \.self) { $client in
                             ClientCellUIView(viewModel: viewModel, client: $client, isEditClientSheetPresented: $isEditClientSheetPresented)
-                                
+                                 
                             
                         }
                     }
                 }
                 
-                Spacer()
                 
             }.padding(.horizontal).disabled(isSheetPresented)
                 .sheet(isPresented: $isSheetPresented) {
