@@ -9,7 +9,48 @@ import SwiftUI
 import StoreKit
 
 class SettingsViewModel: ObservableObject {
-    @Published var coupons: [Coupon] = []
+    @Published var coupons: [Coupon] = [] {
+        didSet {
+            saveCoupons()
+        }
+    }
+    
+    private let couponsFileName = "coupons.json"
+    
+    init() {
+        loadCoupons()
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    private func couponsFilePath() -> URL {
+        return getDocumentsDirectory().appendingPathComponent(couponsFileName)
+    }
+    
+    private func saveCoupons() {
+        DispatchQueue.global().async {
+            let encoder = JSONEncoder()
+            do {
+                let data = try encoder.encode(self.coupons)
+                try data.write(to: self.couponsFilePath())
+            } catch {
+                print("Failed to save players: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func loadCoupons() {
+        let decoder = JSONDecoder()
+        do {
+            let data = try Data(contentsOf: couponsFilePath())
+            coupons = try decoder.decode([Coupon].self, from: data)
+        } catch {
+            print("Failed to load players: \(error.localizedDescription)")
+        }
+    }
     
     func addCoupon(_ coupon: Coupon) {
         coupons.append(coupon)

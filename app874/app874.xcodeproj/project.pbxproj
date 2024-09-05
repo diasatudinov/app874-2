@@ -25,6 +25,7 @@
 		2B8BBCD52C899F7F008139DF /* CouponsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCD42C899F7F008139DF /* CouponsUIView.swift */; };
 		2B8BBCD72C89A067008139DF /* AddCouponsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCD62C89A067008139DF /* AddCouponsUIView.swift */; };
 		2B8BBCD92C89AD23008139DF /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCD82C89AD23008139DF /* Coupon.swift */; };
+		2B8BBCDB2C89AE7B008139DF /* CouponCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCDA2C89AE7B008139DF /* CouponCellUIView.swift */; };
 		2BF2806E2C86EED800336415 /* app874App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2806D2C86EED800336415 /* app874App.swift */; };
 		2BF280702C86EED800336415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2806F2C86EED800336415 /* ContentView.swift */; };
 		2BF280722C86EEDA00336415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF280712C86EEDA00336415 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		2B8BBCD42C899F7F008139DF /* CouponsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsUIView.swift; sourceTree = "<group>"; };
 		2B8BBCD62C89A067008139DF /* AddCouponsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCouponsUIView.swift; sourceTree = "<group>"; };
 		2B8BBCD82C89AD23008139DF /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		2B8BBCDA2C89AE7B008139DF /* CouponCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponCellUIView.swift; sourceTree = "<group>"; };
 		2BF2806A2C86EED800336415 /* app874.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app874.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF2806D2C86EED800336415 /* app874App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app874App.swift; sourceTree = "<group>"; };
 		2BF2806F2C86EED800336415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				2B8BBCB92C88B28E008139DF /* SettingsUIView.swift */,
 				2B8BBCD42C899F7F008139DF /* CouponsUIView.swift */,
 				2B8BBCD62C89A067008139DF /* AddCouponsUIView.swift */,
+				2B8BBCDA2C89AE7B008139DF /* CouponCellUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				2BF2808F2C870F8D00336415 /* Progress.swift in Sources */,
 				2B8BBCB22C88A3C8008139DF /* AddProcedureUIView.swift in Sources */,
 				2BF280822C86F0CB00336415 /* ReOnboardingUIView.swift in Sources */,
+				2B8BBCDB2C89AE7B008139DF /* CouponCellUIView.swift in Sources */,
 				2B8BBCA12C8863BB008139DF /* Service.swift in Sources */,
 				2BF280982C872A1700336415 /* ImagePicker.swift in Sources */,
 				2B8BBCBA2C88B28E008139DF /* SettingsUIView.swift in Sources */,

@@ -14,6 +14,11 @@ struct CouponsUIView: View {
     var body: some View {
         ZStack {
             VStack {
+                ScrollView {
+                    ForEach(viewModel.coupons, id: \.self) { coupon in
+                        CouponCellUIView(coupon: coupon).padding(.horizontal)
+                    }
+                }
                 Spacer()
                 Button {
                     addCouponsSheet = true
