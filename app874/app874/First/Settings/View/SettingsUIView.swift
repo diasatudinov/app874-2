@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsUIView: View {
     @ObservedObject var viewModel = SettingsViewModel()
+    @ObservedObject var homeVM: HomeViewModel
     var body: some View {
         ZStack {
             VStack(spacing: 10) {
@@ -21,7 +22,7 @@ struct SettingsUIView: View {
                     
                 }
                 NavigationLink {
-                    
+                    CouponsUIView(viewModel: viewModel, homeVM: homeVM)
                 } label: {
                     ZStack {
                         Rectangle()
@@ -95,5 +96,5 @@ struct SettingsUIView: View {
 }
 
 #Preview {
-    SettingsUIView()
+    SettingsUIView(homeVM: HomeViewModel())
 }

@@ -25,7 +25,7 @@ struct TabUIView: View {
                 ProceduresUIView(viewModel: procedureVM)
 
             case 2:
-                SettingsUIView()
+                SettingsUIView(homeVM: homeVM)
                // SettingsUIView()
             default:
                 Text("default")

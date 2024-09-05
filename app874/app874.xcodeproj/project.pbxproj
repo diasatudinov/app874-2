@@ -22,6 +22,9 @@
 		2B8BBCB42C88A405008139DF /* ProcedureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCB32C88A405008139DF /* ProcedureViewModel.swift */; };
 		2B8BBCBA2C88B28E008139DF /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCB92C88B28E008139DF /* SettingsUIView.swift */; };
 		2B8BBCBC2C88B2A2008139DF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCBB2C88B2A2008139DF /* SettingsViewModel.swift */; };
+		2B8BBCD52C899F7F008139DF /* CouponsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCD42C899F7F008139DF /* CouponsUIView.swift */; };
+		2B8BBCD72C89A067008139DF /* AddCouponsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCD62C89A067008139DF /* AddCouponsUIView.swift */; };
+		2B8BBCD92C89AD23008139DF /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBCD82C89AD23008139DF /* Coupon.swift */; };
 		2BF2806E2C86EED800336415 /* app874App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2806D2C86EED800336415 /* app874App.swift */; };
 		2BF280702C86EED800336415 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2806F2C86EED800336415 /* ContentView.swift */; };
 		2BF280722C86EEDA00336415 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BF280712C86EEDA00336415 /* Assets.xcassets */; };
@@ -53,6 +56,9 @@
 		2B8BBCB32C88A405008139DF /* ProcedureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureViewModel.swift; sourceTree = "<group>"; };
 		2B8BBCB92C88B28E008139DF /* SettingsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
 		2B8BBCBB2C88B2A2008139DF /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		2B8BBCD42C899F7F008139DF /* CouponsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsUIView.swift; sourceTree = "<group>"; };
+		2B8BBCD62C89A067008139DF /* AddCouponsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCouponsUIView.swift; sourceTree = "<group>"; };
+		2B8BBCD82C89AD23008139DF /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		2BF2806A2C86EED800336415 /* app874.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app874.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF2806D2C86EED800336415 /* app874App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app874App.swift; sourceTree = "<group>"; };
 		2BF2806F2C86EED800336415 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -168,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				2B8BBCB92C88B28E008139DF /* SettingsUIView.swift */,
+				2B8BBCD42C899F7F008139DF /* CouponsUIView.swift */,
+				2B8BBCD62C89A067008139DF /* AddCouponsUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +183,7 @@
 		2B8BBCB82C88B258008139DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2B8BBCD82C89AD23008139DF /* Coupon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,6 +390,7 @@
 			files = (
 				2B8BBCB42C88A405008139DF /* ProcedureViewModel.swift in Sources */,
 				2B8BBCA52C88732D008139DF /* ServiceCellUIView.swift in Sources */,
+				2B8BBCD72C89A067008139DF /* AddCouponsUIView.swift in Sources */,
 				2B8BBCA32C8869D9008139DF /* AddServiceUIView.swift in Sources */,
 				2BF280702C86EED800336415 /* ContentView.swift in Sources */,
 				2BF280872C86F23700336415 /* LoaderUIView.swift in Sources */,
@@ -394,6 +404,7 @@
 				2B8BBCAE2C88A14D008139DF /* ProceduresCellUIView.swift in Sources */,
 				2B8BBCAC2C88A07B008139DF /* ProceduresUIView.swift in Sources */,
 				2BF280912C87111800336415 /* HomeViewModel.swift in Sources */,
+				2B8BBCD92C89AD23008139DF /* Coupon.swift in Sources */,
 				2BF2808F2C870F8D00336415 /* Progress.swift in Sources */,
 				2B8BBCB22C88A3C8008139DF /* AddProcedureUIView.swift in Sources */,
 				2BF280822C86F0CB00336415 /* ReOnboardingUIView.swift in Sources */,
@@ -405,6 +416,7 @@
 				2BF280842C86F0D500336415 /* UsOnboardingUIView.swift in Sources */,
 				2BF2808D2C87006200336415 /* HomeUIView.swift in Sources */,
 				2BF280932C8718B400336415 /* Client.swift in Sources */,
+				2B8BBCD52C899F7F008139DF /* CouponsUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

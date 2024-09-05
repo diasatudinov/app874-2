@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct CouponsUIView: View {
+    @ObservedObject var viewModel: SettingsViewModel
+    @ObservedObject var homeVM: HomeViewModel
+    @State private var addCouponsSheet = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            VStack {
+                Spacer()
+                Button {
+                    addCouponsSheet = true
+                    
+                } label: {
+                    HStack {
+                        Image(systemName: "checkmark.square.fill")
+                        Text("Add discount")
+                    }.foregroundColor(Color.white)
+                        .font(.system(size: 17))
+                        .frame(maxWidth: .infinity)
+                }.frame(height: 88).background(Color.red)
+                    .cornerRadius(12).padding(.horizontal, -16)
+            }.edgesIgnoringSafeArea(.bottom)
+                .sheet(isPresented: $addCouponsSheet) {
+                    AddCouponsUIView(viewModel: viewModel, homeVM: homeVM, isPresented: $addCouponsSheet)
+                }
+        }.navigationTitle(Text("Discounts and coupons"))
     }
 }
 
 #Preview {
-    CouponsUIView()
+    CouponsUIView(viewModel: SettingsViewModel(), homeVM: HomeViewModel())
 }

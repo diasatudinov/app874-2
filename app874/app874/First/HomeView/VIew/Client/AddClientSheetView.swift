@@ -283,7 +283,7 @@ struct EditSheetClientView: View {
                     ImagePicker(selectedImage: $selectedImage, isPresented: $isShowingImagePicker)
                 }
                 .onAppear {
-                    
+                    selectedImage = client.image
                     name = client.name
                     email = client.email
                     phone = client.number

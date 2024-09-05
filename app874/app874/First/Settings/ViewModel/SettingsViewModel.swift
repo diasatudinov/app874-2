@@ -9,6 +9,11 @@ import SwiftUI
 import StoreKit
 
 class SettingsViewModel: ObservableObject {
+    @Published var coupons: [Coupon] = []
+    
+    func addCoupon(_ coupon: Coupon) {
+        coupons.append(coupon)
+    }
     
     func shareApp() {
         guard let url = URL(string: "https://apps.apple.com/app/dafaski/id6633439878") else { return }
