@@ -80,9 +80,6 @@ struct ProceduresCellUIView: View {
                     
                     EditProcedureUIView(viewModel: viewModel, isPresented: $editSheetOpen, procedure: $procedure)
                 }
-//                .alert(isPresented: $showAlert) {
-//                    return Alert(title: Text("Delete"), message: Text("You chose to edit."), dismissButton: .default(Text("OK")))
-//                }
                 .alert(isPresented: $showAlert) {
                     Alert(
                         title: Text("Procedure"),

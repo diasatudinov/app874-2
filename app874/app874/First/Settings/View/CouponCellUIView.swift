@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct CouponCellUIView: View {
+    @ObservedObject var viewModel: SettingsViewModel
+    @ObservedObject var homeVM: HomeViewModel
     @State var coupon: Coupon
+    @State private var showAlert = false
+    @State private var editSheetOpen = false
+
     var body: some View {
         ZStack {
             Rectangle()
@@ -55,7 +60,7 @@ struct CouponCellUIView: View {
                 HStack {
                     Spacer()
                     Button {
-                        //isEditClientSheetPresented = true
+                        editSheetOpen = true
                     } label: {
                         Text("Edit")
                             .font(.system(size: 12, weight: .semibold))
@@ -66,7 +71,7 @@ struct CouponCellUIView: View {
                     }
                     
                     Button {
-                       // viewModel.deleteClient(for: client)
+                       showAlert = true
                     } label: {
                         Text("Delete")
                             .font(.system(size: 12, weight: .semibold))
@@ -81,9 +86,22 @@ struct CouponCellUIView: View {
                 }
             }.padding(.horizontal)
         }.frame(height: 302)
+            .sheet(isPresented: $editSheetOpen) {
+                EditCouponsUIView(viewModel: viewModel, homeVM: homeVM, isPresented: $editSheetOpen, coupon: $coupon)
+            }
+            .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Procedure"),
+                message: Text("The procedure will be permanently removed"),
+                primaryButton: .destructive(Text("Delete")) {
+                    viewModel.deleteCoupon(for: coupon)
+                },
+                secondaryButton: .cancel(Text("Cancel"))
+            )
+        }
     }
 }
 
 #Preview {
-    CouponCellUIView(coupon: Coupon(name: "Discount on your first haircut", discount: "Get 20% off your first haircut at our salon!", clients: [Client(name: "", proceduresPerformed: 0, totalProcedures: 0, income: "", email: "", number: "", note: ""),Client(name: "", proceduresPerformed: 0, totalProcedures: 0, income: "", email: "", number: "", note: ""),Client(name: "", proceduresPerformed: 0, totalProcedures: 0, income: "", email: "", number: "", note: ""),Client(name: "", proceduresPerformed: 0, totalProcedures: 0, income: "", email: "", number: "", note: "")], notes: "Coupon is valid for new customers only. Cannot be combined with other offers"))
+    CouponCellUIView(viewModel: SettingsViewModel(), homeVM: HomeViewModel(), coupon: Coupon(name: "Discount on your first haircut", discount: "Get 20% off your first haircut at our salon!", clients: [Client(name: "", proceduresPerformed: 0, totalProcedures: 0, income: "", email: "", number: "", note: ""),Client(name: "", proceduresPerformed: 0, totalProcedures: 0, income: "", email: "", number: "", note: ""),Client(name: "", proceduresPerformed: 0, totalProcedures: 0, income: "", email: "", number: "", note: ""),Client(name: "", proceduresPerformed: 0, totalProcedures: 0, income: "", email: "", number: "", note: "")], notes: "Coupon is valid for new customers only. Cannot be combined with other offers"))
 }

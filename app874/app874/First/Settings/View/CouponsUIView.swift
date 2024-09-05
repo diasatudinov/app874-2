@@ -16,7 +16,7 @@ struct CouponsUIView: View {
             VStack {
                 ScrollView {
                     ForEach(viewModel.coupons, id: \.self) { coupon in
-                        CouponCellUIView(coupon: coupon).padding(.horizontal)
+                        CouponCellUIView(viewModel: viewModel, homeVM: homeVM, coupon: coupon).padding(.horizontal)
                     }
                 }
                 Spacer()

@@ -52,6 +52,23 @@ class SettingsViewModel: ObservableObject {
         }
     }
     
+    func updateCoupon(for coupon: Coupon, name: String, discount: String, clients: [Client], notes: String) {
+        
+        if let index = coupons.firstIndex(where: { $0.id == coupon.id }) {
+            coupons[index].name = name
+            coupons[index].discount = discount
+            coupons[index].clients = clients
+            coupons[index].notes = notes
+            
+        }
+    }
+    
+    func deleteCoupon(for coupon: Coupon) {
+        if let index = coupons.firstIndex(where: { $0.id == coupon.id }) {
+            coupons.remove(at: index)
+        }
+    }
+    
     func addCoupon(_ coupon: Coupon) {
         coupons.append(coupon)
     }
