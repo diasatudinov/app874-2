@@ -88,7 +88,7 @@ class SettingsViewModel: ObservableObject {
     }
     
     func openUsagePolicy() {
-        guard let url = URL(string: "https://www.termsfeed.com/live/58023c7e-7f73-46fd-9717-e9b281701e26") else { return }
+        guard let url = URL(string: "https://www.termsfeed.com/live/7bf2a873-2dae-4ed6-a9b0-45a05798c8b4") else { return }
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
