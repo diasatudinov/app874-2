@@ -74,7 +74,7 @@ class SettingsViewModel: ObservableObject {
     }
     
     func shareApp() {
-        guard let url = URL(string: "https://apps.apple.com/app/dafaski/id6633439878") else { return }
+        guard let url = URL(string: "https://apps.apple.com/app/pin-make-up-styler/id6677036821") else { return }
         let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         
         if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
