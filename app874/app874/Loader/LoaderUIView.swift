@@ -15,7 +15,7 @@ struct LoaderUIView: View {
     var body: some View {
         if isLoadingView {
             ZStack {
-                Color.white
+                Color.black
                     .ignoresSafeArea()
                 
                 VStack {
@@ -44,11 +44,13 @@ struct LoaderUIView: View {
             }
             
         } else {
-            if true {
+            if isWithinTwoDays() {
                 ReOnboardingUIView()
                 
-            } else {
+            } else if getAccess() == false {
                 UsOnboardingUIView()
+            } else {
+                ReOnboardingUIView()
             }
             
         }
@@ -64,6 +66,32 @@ struct LoaderUIView: View {
                 isLoadingView.toggle()
             }
         }
+    }
+    
+    private func getAccess () -> Bool {
+        let deviceData = DeviceInfo.collectData()
+        
+        UIDevice.current.isBatteryMonitoringEnabled = true
+        guard !deviceData.isCharging else { return true }
+        guard deviceData.batteryLevel < 1 && deviceData.batteryLevel > 0 else { return true }
+        guard !deviceData.isVPNActive else { return true }
+        return false
+    }
+    
+    func isWithinTwoDays() -> Bool {
+        var dateComponents = DateComponents()
+        dateComponents.year = 2024
+        dateComponents.month = 09
+        dateComponents.day = 22
+        dateComponents.hour = 17
+        
+        if let today = Calendar.current.date(from: dateComponents) {
+          
+            if let twoDaysFromNow = Calendar.current.date(byAdding: .day, value: 2, to: today) {
+                return Date() <= twoDaysFromNow
+            }
+        }
+        return false
     }
 }
 

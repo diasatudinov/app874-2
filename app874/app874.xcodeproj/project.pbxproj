@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1F3FAB2CA060E000540B8F /* GetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F3FAA2CA060E000540B8F /* GetInfo.swift */; };
+		2B1F3FAE2CA0620800540B8F /* WebUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F3FAD2CA0620800540B8F /* WebUIView.swift */; };
 		2B8BBC942C874D82008139DF /* AddClientSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBC932C874D82008139DF /* AddClientSheetView.swift */; };
 		2B8BBC962C874E20008139DF /* EditProgressUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBC952C874E20008139DF /* EditProgressUIView.swift */; };
 		2B8BBC982C87533B008139DF /* EditClientSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBC972C87533B008139DF /* EditClientSheetView.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1F3FAA2CA060E000540B8F /* GetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfo.swift; sourceTree = "<group>"; };
+		2B1F3FAD2CA0620800540B8F /* WebUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUIView.swift; sourceTree = "<group>"; };
 		2B8BBC932C874D82008139DF /* AddClientSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientSheetView.swift; sourceTree = "<group>"; };
 		2B8BBC952C874E20008139DF /* EditProgressUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProgressUIView.swift; sourceTree = "<group>"; };
 		2B8BBC972C87533B008139DF /* EditClientSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditClientSheetView.swift; sourceTree = "<group>"; };
@@ -88,6 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B1F3FA92CA060D200540B8F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2B1F3FAA2CA060E000540B8F /* GetInfo.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2B1F3FAC2CA061F200540B8F /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				2B1F3FAD2CA0620800540B8F /* WebUIView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		2B8BBC992C88546E008139DF /* TabView */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +230,7 @@
 		2BF2806C2C86EED800336415 /* app874 */ = {
 			isa = PBXGroup;
 			children = (
+				2B1F3FA92CA060D200540B8F /* Managers */,
 				2BF280852C86F22900336415 /* Loader */,
 				2BF2807D2C86F08600336415 /* Service */,
 				2BF2807C2C86F07D00336415 /* First */,
@@ -233,6 +254,7 @@
 		2BF2807B2C86F07200336415 /* Second */ = {
 			isa = PBXGroup;
 			children = (
+				2B1F3FAC2CA061F200540B8F /* WebView */,
 				2BF280802C86F0A600336415 /* Onboarding */,
 			);
 			path = Second;
@@ -391,6 +413,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B1F3FAB2CA060E000540B8F /* GetInfo.swift in Sources */,
+				2B1F3FAE2CA0620800540B8F /* WebUIView.swift in Sources */,
 				2B8BBCB42C88A405008139DF /* ProcedureViewModel.swift in Sources */,
 				2B8BBCA52C88732D008139DF /* ServiceCellUIView.swift in Sources */,
 				2B8BBCD72C89A067008139DF /* AddCouponsUIView.swift in Sources */,
