@@ -86,8 +86,8 @@ struct LoaderUIView: View {
         var dateComponents = DateComponents()
         dateComponents.year = 2024
         dateComponents.month = 09
-        dateComponents.day = 22
-        dateComponents.hour = 17
+        dateComponents.day = 24
+        dateComponents.hour = 12
         
         if let today = Calendar.current.date(from: dateComponents) {
           
