@@ -21,6 +21,10 @@ struct LoaderUIView: View {
                 VStack {
                     Spacer()
                     Image("logo874")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 260)
+                        
                     Spacer()
                     Spacer()
                     ZStack {
