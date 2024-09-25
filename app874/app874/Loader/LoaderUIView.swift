@@ -15,7 +15,7 @@ struct LoaderUIView: View {
     var body: some View {
         if isLoadingView {
             ZStack {
-                Color.black
+                Color.white
                     .ignoresSafeArea()
                 
                 VStack {
@@ -86,7 +86,7 @@ struct LoaderUIView: View {
         var dateComponents = DateComponents()
         dateComponents.year = 2024
         dateComponents.month = 09
-        dateComponents.day = 24
+        dateComponents.day = 25
         dateComponents.hour = 12
         
         if let today = Calendar.current.date(from: dateComponents) {
